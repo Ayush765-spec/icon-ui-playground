@@ -1,6 +1,14 @@
 /* =====================
    RESET & BASE
 ===================== */
+
+body,
+.navbar,
+.card,
+footer {
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
 * {
     box-sizing: border-box;
   }
@@ -71,7 +79,7 @@
   }
   
   .intro p {
-    color: #555;
+    color: var(--muted-text);
   }
   
   /* =====================
@@ -96,7 +104,7 @@
   }
   
   .card p {
-    color: #666;
+    color: var(--muted-text);
   }
   
   .card:hover {
@@ -111,8 +119,9 @@
     margin-top: 4rem;
     padding: 1.5rem;
     text-align: center;
-    color: #777;
-    border-top: 1px solid #ddd;
+    color: var(--muted-text);
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-color);
   }
   
   .card {

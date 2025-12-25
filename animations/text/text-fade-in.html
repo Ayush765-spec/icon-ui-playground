@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Text Fade In</title>
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+    }
+  </script>
   <style>
     body {
       display: grid;

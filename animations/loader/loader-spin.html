@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Loader Spinner</title>
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+    }
+  </script>
   <style>
+
     body {
       display: grid;
       place-items: center;
