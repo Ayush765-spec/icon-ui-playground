@@ -85,6 +85,102 @@ body {
 /* =====================
      GALLERY GRID
   ===================== */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card h3 {
+    margin-top: 0;
+  }
+  
+  .card p {
+    color: var(--muted-text);
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  /* --- Card Preview Container --- */
+.card-preview {
+  height: 100px; /* Fixed height for consistency */
+  background-color: rgba(128, 128, 128, 0.1); /* Subtle background */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+/* --- Animation 1: Button Hover Effect --- */
+.preview-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.2s;
+}
+
+/* Animate when the user hovers the entire CARD */
+.card:hover .preview-btn {
+  transform: scale(1.1);
+  background-color: #0056b3;
+}
+
+/* --- Animation 2: Text Fade Effect --- */
+.preview-text-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 60%;
+}
+
+.line {
+  height: 8px;
+  background-color: #aaa;
+  border-radius: 4px;
+  opacity: 0.4;
+  animation: fadeInPulse 2s infinite ease-in-out;
+}
+
+.line-1 { width: 100%; }
+.line-2 { width: 70%; animation-delay: 0.3s; }
+
+@keyframes fadeInPulse {
+  0%, 100% { opacity: 0.3; transform: translateY(2px); }
+  50% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Animation 3: Loader Spin Effect --- */
+.preview-loader {
+  width: 30px;
+  height: 30px;
+  border: 4px solid #e0e0e0;
+  border-top-color: #007bff; /* Primary color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+  
+  /* =====================
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
